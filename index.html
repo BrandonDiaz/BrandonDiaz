@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Brandon Diaz</title>
+        <title>Brandon Diaz - Full Stack Developer & Product Designer</title>
         <style>
             :root {
                 --bg-color: #f3f0f3;
@@ -13,7 +13,8 @@
                 --text-color: #10101C;
                 --text-secondary: #6B7173;
                 --text-tag: #ffffff;
-                --border-color: #EDEEEF;
+                --border-color: #dddddd;
+                --link-color: #00A1FE;
             }
 
             @media (prefers-color-scheme: dark) {
@@ -24,7 +25,7 @@
                     --text-color: #ffffff;
                     --text-secondary: #6B7173;
                     --text-tag: #ffffff;
-                    --border-color: #111111;
+                    --border-color: #1e1e1e;
                 }
             }
 
@@ -35,7 +36,7 @@
                 --text-color: #ffffff;
                 --text-secondary: #6B7173;
                 --text-tag: #ffffff;
-                --border-color: #111111;
+                --border-color: #1e1e1e;
             }
 
             [data-theme="light"] {
@@ -45,7 +46,7 @@
                 --text-color: #10101C;
                 --text-tag: #ffffff;
                 --text-secondary: #6B7173;
-                --border-color: #EDEEEF;
+                --border-color: #dddddd;
             }
 
             * {
@@ -71,13 +72,12 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 60px;
-                padding: 20px 0;
+                margin-bottom: 50px;
             }
 
             .logo {
                 font-size: 24px;
-                font-weight: 600;
+                font-weight: 300;
                 color: var(--text-color);
                 text-decoration: none;
             }
@@ -92,6 +92,11 @@
                 color: var(--text-color);
                 text-decoration: none;
                 font-size: 16px;
+
+                &:active,
+                &:hover {
+                    color: var(--text-secondary);
+                }
             }
 
             .theme-toggle {
@@ -110,7 +115,7 @@
             .hero h1 {
                 font-size: 36px;
                 font-weight: 600;
-                line-height: 1.2;
+                line-height: 1.4;
                 margin-bottom: 20px;
             }
 
@@ -128,7 +133,7 @@
             }
 
             .section {
-                margin-bottom: 60px;
+                margin-bottom: 30px;
             }
 
             .section-title {
@@ -145,6 +150,10 @@
                 gap: 15px;
                 padding: 30px 0;
                 border-bottom: 1px solid var(--border-color);
+
+                &:last-child {
+                    border-bottom: none;
+                }
             }
 
             .item-icon {
@@ -204,7 +213,7 @@
             }
 
             .tech-tag {
-                background-color: var(--bg-tag);
+                background-color: var(--text-secondary);
                 color: var(--text-tag);
                 border-radius: 4px;
                 padding: 4px 8px;
@@ -237,18 +246,37 @@
                 display: flex;
                 align-items: center;
                 gap: 8px;
+                width: 100%;
+
+                &:active,
+                &:hover {
+                    color: var(--link-color);
+                }
             }
 
             .links-list .icon {
                 color: var(--text-secondary);
                 font-size: 20px;
+
                 margin-right: 8px;
+            }
+
+            .links-list .anchored {
+                margin-left: auto;
             }
 
             .external-icon {
                 color: var(--text-secondary);
                 font-size: 16px;
                 transform: rotate(-45deg);
+            }
+
+            .footer {
+                display: block;
+                text-align: center;
+                margin-top: 50px;
+                font-size: 14px;
+                color: var(--text-secondary);
             }
         </style>
         <script src="https://kit.fontawesome.com/c72695d2ad.js" crossorigin="anonymous"></script>
@@ -266,12 +294,12 @@
             </header>
 
             <section class="hero">
-                <h1>I build intelligent, <em>user-focused</em> products and AI services with thoughtful design.</h1>
+                <h1>I build <em>human-centric</em> applications and turn real problems into <em>impactful</em> solutions.</h1>
                 <p>
-I'm a full stack developer and product designer with over 10 years of experience building scalable, user-focused applications for web and mobile. I’ve led cross-functional teams, shaped product strategy, and delivered solutions for a wide variety of industries, turning complex challenges into elegant, impactful products.
+I'm a full stack developer and product designer with over a decade of experience building user-focused applications for web and mobile. I’ve led cross-functional teams, shaped product strategy, and delivered solutions for a wide variety of industries.
                 </p>
                 <p>
-                I specialise in TypeScript, modern LLM stacks, and accessibility, in addition to API design, smart contracts, automation, interactive experiences, and microservices. I focus on creating intuitive, human-centered experiences that combine thoughtful design with technical excellence.
+                My expertise includes TypeScript, modern LLM stacks, and accessibility, as well as API design, smart contracts, automation, interactive experiences, and microservices. I strive to create intuitive experiences that blend thoughtful design with cutting edge tech.
                 </p>
 
             </section>
@@ -286,14 +314,14 @@ I'm a full stack developer and product designer with over 10 years of experience
                     <div class="item-content">
                         <h3 class="item-title">Day9.TV</h3>
                         <p class="item-description">
-                        I developed the web presence using the YouTube API to showcase recent VoDs and playlists, integrated Twitch to send notifications to users, and built a custom Discord bot for community challenges. On top of that, I created the user-facing portion of “The Disturbance in Day9TV Town,” an interactive Twitch experience with real-time audience participation designed to enhance engagement and make the community feel part of the story.
+                        I developed the web presence using the YouTube API to showcase recent VoDs and playlists, integrated Twitch to send notifications to users, and built a custom Discord bot for community challenges. On top of that, I created the user-facing portion of “The Disturbance in Day9TV Town,” an interactive Twitch experience where viewers could participate in real-time.
                     </p>
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Work Experience</h2>
+                <h2 class="section-title">Experience</h2>
 
                 <div class="work-item">
                     <div class="item-icon">
@@ -391,32 +419,37 @@ I'm a full stack developer and product designer with over 10 years of experience
                         <a href="https://www.linkedin.com/in/brandonmdiaz/" target="_blank">
                             <span class="icon"><i class="fa-brands fa-linkedin-in"></i></span>
                             <span>LinkedIn</span>
+
+                            <span class="anchored external-icon"><i class="fa-solid fa-arrow-right"></i></span>
                         </a>
-                        <span class="external-icon"><i class="fa-solid fa-arrow-right"></i></span>
                     </li>
                     <li>
                         <a href="https://bsky.app/profile/brandondiaz.me" target="_blank">
                             <span class="icon"><i class="fa-brands fa-bluesky"></i></span>
                             <span>Bluesky</span>
+
+                            <span class="anchored external-icon"><i class="fa-solid fa-arrow-right"></i></span>
                         </a>
-                        <span class="external-icon"><i class="fa-solid fa-arrow-right"></i></span>
                     </li>
                     <li>
                         <a href="https://github.com/BrandonDiaz" target="_blank">
                             <span class="icon"><i class="fa-brands fa-github-alt"></i></span>
                             <span>GitHub</span>
+
+                            <span class="anchored external-icon"><i class="fa-solid fa-arrow-right"></i></span>
                         </a>
-                        <span class="external-icon"><i class="fa-solid fa-arrow-right"></i></span>
                     </li>
                     <li>
                         <a href="mailto:hello@brandondiaz.me">
                             <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
                             <span>Email</span>
+
+                            <span class="anchored">hello@brandondiaz.me</span>
                         </a>
-                        <span>hello@brandondiaz.me</span>
                     </li>
                 </ul>
             </section>
+            <span class="footer">© Brandon Diaz 2025</span>
         </div>
 
         <script>
