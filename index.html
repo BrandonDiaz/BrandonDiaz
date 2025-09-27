@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dale - Product Designer</title>
+        <style>
+            :root {
+                --bg-color: #f3f0f3;
+                --bg-card: #10192C;
+                --bg-tag: #3a3a3a;
+                --text-color: #10101C;
+                --text-secondary: #6B7173;
+                --text-tag: #ffffff;
+                --border-color: #EDEEEF;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg-color: #101010;
+                    --bg-card: #3a3a3a;
+                    --bg-tag: #3a3a3a;
+                    --text-color: #ffffff;
+                    --text-secondary: #6B7173;
+                    --text-tag: #ffffff;
+                    --border-color: #111111;
+                }
+            }
+
+            [data-theme="dark"] {
+                --bg-color: #101010;
+                --bg-card: #3a3a3a;
+                --bg-tag: #3a3a3a;
+                --text-color: #ffffff;
+                --text-secondary: #6B7173;
+                --text-tag: #ffffff;
+                --border-color: #111111;
+            }
+
+            [data-theme="light"] {
+                --bg-color: #f3f0f3;
+                --bg-card: #10192C;
+                --bg-tag: #3a3a3a;
+                --text-color: #10101C;
+                --text-tag: #ffffff;
+                --text-secondary: #6B7173;
+                --border-color: #EDEEEF;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                line-height: 1.6;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 60px;
+                padding: 20px 0;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: 600;
+                color: var(--text-color);
+                text-decoration: none;
+            }
+
+            nav {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            nav a {
+                color: var(--text-color);
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            .theme-toggle {
+                background: none;
+                border: none;
+                color: var(--text-secondary);
+                font-size: 18px;
+                cursor: pointer;
+                padding: 8px;
+            }
+
+            .hero {
+                margin-bottom: 60px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+
+            .hero h1 em {
+                background: var(--text-color);
+                color: var(--bg-color);
+                font-style: normal;
+                padding: 0 8px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                color: var(--text-secondary);
+                margin-bottom: 16px;
+            }
+
+            .section {
+                margin-bottom: 60px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                color: var(--text-color);
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+
+            .project-item,
+            .work-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+                padding: 30px 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .item-icon {
+                width: 32px;
+                height: 32px;
+                background-color: var(--bg-card);
+                border-radius: 4px;
+                overflow: hidden;
+                color: var(--bg-color);
+                font-weight: bold;
+                font-size: 12px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .item-icon-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .item-content {
+                flex: 1;
+            }
+
+            .item-title {
+                font-size: 16px;
+                font-weight: 300;
+                margin-bottom: 4px;
+                line-height: 32px;
+                color: var(--text-color);
+            }
+
+            .item-description {
+                color: var(--text-secondary);
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+
+            .work-period {
+                color: var(--text-color);
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            .tech-stack {
+                margin-bottom: 60px;
+            }
+
+            .tech-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                list-style: none;
+            }
+
+            .tech-tag {
+                background-color: var(--bg-tag);
+                color: var(--text-tag);
+                border-radius: 4px;
+                padding: 4px 8px;
+                font-size: 14px;
+            }
+
+            .links-section {
+                margin-top: 60px;
+            }
+
+            .links-list {
+                list-style: none;
+            }
+
+            .links-list li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .links-list li:last-child {
+                border-bottom: none;
+            }
+
+            .links-list a {
+                color: var(--text-color);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .links-list .icon {
+                color: var(--text-secondary);
+                font-size: 20px;
+                margin-right: 8px;
+            }
+
+            .external-icon {
+                color: var(--text-secondary);
+                font-size: 16px;
+                transform: rotate(-45deg);
+            }
+        </style>
+        <script src="https://kit.fontawesome.com/c72695d2ad.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body data-theme="light">
+        <div class="container">
+            <header>
+                <a href="#" class="logo">Brandon Diaz</a>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#projects">Projects</a>
+                    <button class="theme-toggle" onclick="toggleTheme()"><i class="fa-regular fa-moon"></i></button>
+                </nav>
+            </header>
+
+            <section class="hero">
+                <h1>I build intelligent, <em>user-focused</em> products and AI services with thoughtful design.</h1>
+                <p>
+I'm a full stack developer and product designer with over 10 years of experience building scalable, user-focused applications for web and mobile. I’ve led cross-functional teams, shaped product strategy, and delivered solutions for a wide variety of industries, turning complex challenges into elegant, impactful products.
+                </p>
+                <p>
+                I specialise in TypeScript, modern LLM stacks, and accessibility, in addition to API design, smart contracts, automation, interactive experiences, and microservices. I focus on creating intuitive, human-centered experiences that combine thoughtful design with technical excellence.
+                </p>
+
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project-item">
+                    <div class="item-icon">
+                        <img src="logos/day9.png" alt="Day9.TV" class="item-icon-img">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Day9.TV</h3>
+                        <p class="item-description">
+                        I developed the web presence using the YouTube API to showcase recent VoDs and playlists, integrated Twitch to send notifications to users, and built a custom Discord bot for community challenges. On top of that, I created the user-facing portion of “The Disturbance in Day9TV Town,” an interactive Twitch experience with real-time audience participation designed to enhance engagement and make the community feel part of the story.
+                    </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="work-item">
+                    <div class="item-icon">
+                        <img src="logos/omni.jpeg" alt="OmniPlatform" class="item-icon-img">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">OmniPlatform</h3>
+                        <span class="work-period">3 years+</span>
+                        <p class="item-description">
+                        I the lead UX and product design for the core platform and custom client implementations, creating integrations for tablets, kiosks, and embedded devices. I collaborate with cross-functional teams to ensure client needs are met and explore emerging technologies such as machine learning, AI, and blockchain to enhance our solutions.</p>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="item-icon">
+                        <img src="logos/genfi.jpeg" alt="GenFi Ministries" class="item-icon-img">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">GenFi Ministries</h3>
+                        <span class="work-period">2.5 years</span>
+                        <p class="item-description">
+                        I supported Marketing, Customer Service, Investments, and Administrative teams by improving workflows, implementing A/B testing, and building integration bridges between legacy systems, helping teams operate more efficiently and make data-driven decisions.</p>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="item-icon">
+                        <img src="logos/ocwk.jpg" alt="OC Web Kings" class="item-icon-img">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">OC Web Kings</h3>
+                        <span class="work-period">2 years</span>
+                        <p class="item-description">
+                        I developed hybrid mobile apps in Ionic for iOS and Android, designed and deployed RESTful APIs with Neo4j on AWS EC2, and managed client expectations while mentoring junior developers.</p>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="item-icon">
+                        <img src="logos/omni.jpeg" alt="OmniPlatform" class="item-icon-img">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">OmniPlatform</h3>
+                        <span class="work-period">5.5 years</span>
+                        <p class="item-description">
+                            I guided UX/UI design and framework architecture for a cloud-based PaaS platform. I contributed to infrastructure and microservices and collaborated with clients to ensure intuitive, high-quality user experiences.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="item-icon">NG</div>
+                    <div class="item-content">
+                        <h3 class="item-title">NuGrove</h3>
+                        <span class="work-period">9 months</span>
+                        <p class="item-description">
+                            I built and designed custom WordPress sites and plugins, managing full project lifecycles with a strong focus on accessibility, graceful degradation, web standards, and SEO best practices.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section tech-stack">
+                <h2 class="section-title">Technologies & Skills</h2>
+                <ul class="tech-list">
+                    <li class="tech-tag">TypeScript</li>
+                    <li class="tech-tag">Angular</li>
+                    <li class="tech-tag">Ionic</li>
+                    <li class="tech-tag">Electron</li>
+                    <li class="tech-tag">Node.js</li>
+                    <li class="tech-tag">PHP</li>
+                    <li class="tech-tag">JavaScript</li>
+                    <li class="tech-tag">Ruby on Rails</li>
+                    <li class="tech-tag">MongoDB</li>
+                    <li class="tech-tag">Postgres</li>
+                    <li class="tech-tag">MySQL</li>
+                    <li class="tech-tag">Neo4j</li>
+                    <li class="tech-tag">Redis</li>
+                    <li class="tech-tag">Pinecone</li>
+                    <li class="tech-tag">AWS (EC2, S3, Glacier)</li>
+                    <li class="tech-tag">Docker</li>
+                    <li class="tech-tag">Solidity</li>
+                    <li class="tech-tag">LangChain</li>
+                    <li class="tech-tag">Retrieval Augmented Generation</li>
+                    <li class="tech-tag">Vector Search</li>
+                    <li class="tech-tag">UX/UI Design</li>
+                    <li class="tech-tag">Accessibility (WCAG / Section 508)</li>
+                </ul>
+            </section>
+
+            <section class="links-section">
+                <h2 class="section-title">Get In Touch</h2>
+                <ul class="links-list">
+                    <li>
+                        <a href="https://www.linkedin.com/in/brandonmdiaz/" target="_blank">
+                            <span class="icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <span class="external-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="https://bsky.app/profile/brandondiaz.me" target="_blank">
+                            <span class="icon"><i class="fa-brands fa-bluesky"></i></span>
+                            <span>Bluesky</span>
+                        </a>
+                        <span class="external-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/BrandonDiaz" target="_blank">
+                            <span class="icon"><i class="fa-brands fa-github-alt"></i></span>
+                            <span>GitHub</span>
+                        </a>
+                        <span class="external-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="mailto:hello@brandondiaz.me">
+                            <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
+                            <span>Email</span>
+                        </a>
+                        <span>hello@brandondiaz.me</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <script>
+            function toggleTheme() {
+                const body = document.body;
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                const toggleButton = document.querySelector('.theme-toggle');
+
+                body.setAttribute('data-theme', newTheme);
+                toggleButton.innerHTML = newTheme === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
+
+                // Save theme preference
+                localStorage.setItem('theme', newTheme);
+            }
+
+            // Load saved theme preference or detect system preference
+            document.addEventListener('DOMContentLoaded', function () {
+                const savedTheme = localStorage.getItem('theme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const toggleButton = document.querySelector('.theme-toggle');
+
+                // Use saved preference if available, otherwise use system preference
+                const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+                document.body.setAttribute('data-theme', initialTheme);
+                toggleButton.innerHTML = initialTheme === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
+            });
+        </script>
+    </body>
+
+</html>
