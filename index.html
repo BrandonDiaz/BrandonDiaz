@@ -6,9 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Brandon Diaz - Full Stack Architect</title>
         <meta property="og:title" content="Brandon Diaz - Full Stack Architect" />
-<meta property="og:type" content="website" />
-        <meta property="og:description" 
-  content="I build intuitive apps for humans and flexible architecture for AI agents." />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="I build intuitive apps for humans and flexible architecture for AI agents." />
+        <script>
+            (function () {
+                try {
+                    const savedTheme = localStorage.getItem('theme');
+                    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+                    document.documentElement.setAttribute('data-theme', initialTheme);
+                } catch (error) {
+                    console.warn('Theme initialization failed:', error);
+                }
+            })();
+        </script>
         <style>
             :root {
                 --bg-color: #f3f0f3;
@@ -192,8 +203,8 @@
             }
 
             .item-title {
-                font-size: 16px;
-                font-weight: 300;
+                font-size: 18px;
+                font-weight: 500;
                 margin-bottom: 4px;
                 line-height: 32px;
                 color: var(--text-color);
@@ -292,7 +303,7 @@
         <script src="https://kit.fontawesome.com/c72695d2ad.js" crossorigin="anonymous"></script>
     </head>
 
-    <body data-theme="light">
+    <body>
         <div class="container">
             <header>
                 <a href="#" class="logo" role="button">Brandon Diaz</a>
@@ -346,13 +357,26 @@ My current skillset focuses on UX/UI design, modern TypeScript frameworks, Node.
 
                 <div class="work-item">
                     <div class="item-icon">
+                        <img src="logos/orpd.png" alt="Oregon Parks and Recreation" class="item-icon-img">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Oregon Parks and Recreation</h3>
+                        <span class="work-period">Database Architect</span>
+                        <p class="item-description">
+                            I design, build, and maintain databases and data integrations to support business operations. I optimize performance, ensure data integrity, and implement integrations that enable secure, efficient access across systems. My work supports OPRD’s statewide mission by enabling data-driven decisions that preserve Oregon’s natural, cultural, and recreational resources.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="item-icon">
                         <img src="logos/omni.jpeg" alt="OmniPlatform" class="item-icon-img">
                     </div>
                     <div class="item-content">
                         <h3 class="item-title">OmniPlatform</h3>
-                        <span class="work-period">Senior UX and Software Engineer, 3 years+</span>
+                        <span class="work-period">Senior UX and Software Engineer, 5 years</span>
                         <p class="item-description">
-                        I lead the UX and product design for the core platform and custom client implementations, creating integrations for tablets, kiosks, and embedded devices. I collaborate with cross-functional teams to ensure client needs are met and explore emerging technologies such as machine learning, AI, and blockchain to enhance our solutions.</p>
+                        I led the UX and product design for the core platform and custom client implementations, creating integrations for tablets, kiosks, and embedded devices. I collaborated with cross-functional teams to ensure client needs were met and explored emerging technologies such as machine learning, AI, and blockchain to enhance our solutions.</p>
                     </div>
                 </div>
 
@@ -484,12 +508,12 @@ My current skillset focuses on UX/UI design, modern TypeScript frameworks, Node.
 
         <script>
             function toggleTheme() {
-                const body = document.body;
-                const currentTheme = body.getAttribute('data-theme');
+                const root = document.documentElement;
+                const currentTheme = root.getAttribute('data-theme');
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 const toggleButton = document.querySelector('.theme-toggle');
 
-                body.setAttribute('data-theme', newTheme);
+                root.setAttribute('data-theme', newTheme);
                 toggleButton.innerHTML = newTheme === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
 
                 // Save theme preference
@@ -498,14 +522,19 @@ My current skillset focuses on UX/UI design, modern TypeScript frameworks, Node.
 
             // Load saved theme preference or detect system preference
             document.addEventListener('DOMContentLoaded', function () {
-                const savedTheme = localStorage.getItem('theme');
+                let savedTheme = null;
+                try {
+                    savedTheme = localStorage.getItem('theme');
+                } catch (error) {
+                    console.warn('Unable to access saved theme preference:', error);
+                }
                 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 const toggleButton = document.querySelector('.theme-toggle');
 
                 // Use saved preference if available, otherwise use system preference
                 const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
-                document.body.setAttribute('data-theme', initialTheme);
+                document.documentElement.setAttribute('data-theme', initialTheme);
                 toggleButton.innerHTML = initialTheme === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
             });
         </script>
